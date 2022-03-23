@@ -1,0 +1,2 @@
+referred_by, fname, lname, gender, email, contact, hs_name
+left join patreg on referal.patient_id = referal.pid left join hospitals on referal.hospital_id = hospitals.hs_id
