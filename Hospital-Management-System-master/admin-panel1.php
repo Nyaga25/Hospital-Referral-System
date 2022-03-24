@@ -428,7 +428,7 @@ if(isset($_POST['docsub1']))
         <div class="row">
         
     
-        
+              <!-- <a href="./report.php" class="btn btn-primary">generate</a><br> -->
               <table class="table table-hover ref-tb">
                 <thead>
                   <tr>
