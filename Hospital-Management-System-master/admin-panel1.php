@@ -107,6 +107,8 @@ if(isset($_POST['docsub1']))
   background-color: #3c50c1;
   border-color: #3c50c1;
 }
+
+.ref-tb td{white-space: nowrap;}
   </style>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -410,7 +412,7 @@ if(isset($_POST['docsub1']))
                         <td>$pres</td>
                       </tr>";
                     }
-
+                    $con -> close();
                   ?>
                 </tbody>
               </table>
@@ -427,55 +429,30 @@ if(isset($_POST['docsub1']))
         
     
         
-              <table class="table table-hover">
+              <table class="table table-hover ref-tb">
                 <thead>
                   <tr>
-                  <th scope="col">Doctor</th>
                     <th scope="col">Patient ID</th>
-                    <th scope="col">Appointment ID</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Appointment Date</th>
-                    <th scope="col">Appointment Time</th>
-                    <th scope="col">Disease</th>
-                    <th scope="col">Allergy</th>
-                    <th scope="col">Prescription</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Hospital referred</th>
+                    <th scope="col">Referral date</th>
+                    <th scope="col">Referred by</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php 
-                    // $con=mysqli_connect("localhost","root","","myhmsdb");
-                    // global $con;
-                    // $query = "select * from prestb";
-                    // $result = mysqli_query($con,$query);
-                    // while ($row = mysqli_fetch_array($result)){
-                    //   $doctor = $row['doctor'];
-                    //   $pid = $row['pid'];
-                    //   $ID = $row['ID'];
-                    //   $fname = $row['fname'];
-                    //   $lname = $row['lname'];
-                    //   $appdate = $row['appdate'];
-                    //   $apptime = $row['apptime'];
-                    //   $disease = $row['disease'];
-                    //   $allergy = $row['allergy'];
-                    //   $pres = $row['prescription'];
-
-                      
-                    //   echo "<tr>
-                    //     <td>$doctor</td>
-                    //     <td>$pid</td>
-                    //     <td>$ID</td>
-                    //     <td>$fname</td>
-                    //     <td>$lname</td>
-                    //     <td>$appdate</td>
-                    //     <td>$apptime</td>
-                    //     <td>$disease</td>
-                    //     <td>$allergy</td>
-                    //     <td>$pres</td>
-                    //   </tr>";
-                    // }
-
-                  ?>
+                  <?php require_once("./refl.php")?>
+                  <?php $rows = getReferals() ?>
+                    <tr>
+                      <?php foreach($rows as $row) {?>
+                        <td><?php echo $row["patient_id"] ?></td>
+                        <td><?php echo $row["fname"] ?></td>
+                        <td><?php echo $row["lname"] ?></td>
+                        <td><?php echo $row["hs_name"] ?></td>
+                        <td><?php echo $row["referal_date"] ?></td>
+                        <td><?php echo $row["refered_by"] ?></td>
+                    </tr>
+                  <?php }?>
                 </tbody>
               </table>
         <br>

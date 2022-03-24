@@ -271,7 +271,7 @@ if(isset($_GET['cancel']))
                     $con=mysqli_connect("localhost","root","","myhmsdb");
                     global $con;
 
-                    $query = "select pid,fname,lname,gender,email,contact from patreg";
+                    $query = "select pid,fname,lname,gender,email,contact,isReffered from patreg";
                     
                     $result = mysqli_query($con,$query);
                     if(!$result){
@@ -291,9 +291,13 @@ if(isset($_GET['cancel']))
                         <td><?php echo $row['contact'];?></td>  
                         
                         <td>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Referr patient</button>
+                          <?php if($row['isReffered']) {?>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" disabled>Referred</button>
+                          <?php } else {?>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal-<?php echo $row['pid']; ?>">Referr patient</button>
+                          <?php }?>
                           <!-- The Modal -->
-                          <div class="modal" id="myModal">
+                          <div class="modal" id="myModal-<?php echo $row['pid']; ?>">
                             <div class="modal-dialog">
                               <div class="modal-content">
                               
