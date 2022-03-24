@@ -108,7 +108,7 @@ if(isset($_POST['docsub1']))
   border-color: #3c50c1;
 }
 
-.ref-tb td{white-space: nowrap;}
+.ref-tb th,td{white-space: nowrap;}
   </style>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
