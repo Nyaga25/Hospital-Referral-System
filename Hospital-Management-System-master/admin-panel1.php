@@ -42,7 +42,7 @@ if(isset($_POST['docsub1']))
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/user2.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
@@ -78,7 +78,7 @@ if(isset($_POST['docsub1']))
 
   <style >
     .bg-primary {
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(left, #BFB372, #BFB372);
 }
 
 .col-md-4{
@@ -104,8 +104,8 @@ if(isset($_POST['docsub1']))
 }
 
 .btn-primary{
-  background-color: #3c50c1;
-  border-color: #3c50c1;
+  background-color: #BFB372;
+  border-color: #BFB372;
 }
 
 .ref-tb th,td{white-space: nowrap;}

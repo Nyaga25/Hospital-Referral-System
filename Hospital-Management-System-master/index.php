@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>HOSPITAL REFERRAL SYSTEM</title>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="images/user2.png" />
 <link rel="stylesheet" type="text/css" href="style1.css">
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
@@ -48,7 +48,7 @@ function checklen()
 </head>
 
 <!------ Include the above in your HEAD tag ---------->
-<body>
+<body style="background: -webkit-linear-gradient(left, #BFB372, #00c6ff); background-size: cover;">
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
     <div class="container">
 
@@ -79,7 +79,7 @@ function checklen()
 <div class="container register" style="font-family: 'IBM Plex Sans', sans-serif;">
                 <div class="row">
                     <div class="col-md-3 register-left" style="margin-top: 10%;right: 5%">
-                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <img src="images/306473.png" alt=""/>
                         <h3>Welcome</h3>
                        
                     </div>

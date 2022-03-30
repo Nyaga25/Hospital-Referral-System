@@ -30,7 +30,7 @@ include("header.php");
 }
 
   </style>
-  <body style="background: -webkit-linear-gradient(left, #3931af, #00c6ff); background-size: cover;">
+  <body style="background: -webkit-linear-gradient(left, #BFB372, #00c6ff); background-size: cover;">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
     <div class="container">
 
@@ -66,7 +66,7 @@ include("header.php");
          <div class="col-md-7" style="padding-left: 180px; ">
                  <div style="-webkit-animation: mover 2s infinite alternate;
     animation: mover 1s infinite alternate;">
-          <img src="images/ambulance1.png" alt="" style="width: 20%;padding-left: 40px;margin-top: 150px;margin-left: 45px;margin-bottom:15px">
+          <img src="images/306473.png " alt="" style="width: 20%;padding-left: 40px;margin-top: 150px;margin-left: 45px;margin-bottom:15px">
       </div>
 
       <div style="color: white;">
