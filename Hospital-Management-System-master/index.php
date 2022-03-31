@@ -95,7 +95,7 @@ function checklen()
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="admin" aria-selected="false">Administrator</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="" role="tab" aria-controls="" aria-selected="false">paramedics</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#paramedic" role="tab" aria-controls="" aria-selected="false">paramedics</a>
                             </li>
                           
                         </ul>
@@ -195,24 +195,43 @@ function checklen()
                             <div class="tab-pane fade show" id="admin" role="tabpanel" aria-labelledby="profile-tab">
                                 <h3  class="register-heading">Login as Admin</h3>
                                 <form method="post" action="func3.php">
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" name="username1" onkeydown="return alphaOnly(event);" required/>
-                                        </div>
-                                        
+                                    <div class="row register-form">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="User Name *" name="username1" onkeydown="return alphaOnly(event);" required/>
+                                            </div>
+                                            
 
 
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" name="password2" required/>
                                         </div>
-                                        
-                                        <input type="submit" class="btnRegister" name="adsub" value="Login"/>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Password *" name="password2" required/>
+                                            </div>
+                                            
+                                            <input type="submit" class="btnRegister" name="adsub" value="Login"/>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade show" id="paramedic" role="tabpanel" aria-labelledby="profile-tab">
+                                <h3  class="register-heading">Login as Paramedic</h3>
+                                <form method="post" action="func_pr.php">
+                                    <div class="row register-form">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="User Name *" name="email" onkeydown="return alphaOnly(event);" required/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Password *" name="pwd" required/>
+                                            </div>
+                                            <input type="submit" class="btnRegister" name="pr_log" value="Login"/>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
 

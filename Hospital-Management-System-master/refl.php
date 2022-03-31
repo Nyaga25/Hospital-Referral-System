@@ -8,7 +8,8 @@ function getReferals() {
             lname,
             referal_date,
             hs_name,
-            refered_by
+            refered_by,
+            isDelivered
             FROM referal 
             LEFT JOIN patreg ON referal.patient_id = patreg.pid
             LEFT JOIN hospitals ON referal.hospital_id = hospitals.hs_id";

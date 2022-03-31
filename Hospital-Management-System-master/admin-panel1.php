@@ -19,6 +19,20 @@ if(isset($_POST['docsub']))
   }
 }
 
+if(isset($_POST['prs_sub']))
+{
+  $pr_fname=$_POST['pr_fname'];
+  $pr_lname=$_POST['pr_lname'];
+  $pr_email=$_POST['pr_email'];
+
+  $query="insert into paramedics(f_name,l_name,email)values('$pr_fname','$pr_lname','$pr_email')";
+  $result=mysqli_query($con,$query);
+  if($result)
+    {
+      echo "<script>alert('Doctor added successfully!');</script>";
+  }
+}
+
 
 if(isset($_POST['docsub1']))
 {
@@ -140,6 +154,7 @@ if(isset($_POST['docsub1']))
       <a class="list-group-item list-group-item-action" href="#list-app" id="list-app-list"  role="tab" data-toggle="list" aria-controls="home">Appointment Details</a>
       <a class="list-group-item list-group-item-action" href="#list-pres" id="list-pres-list"  role="tab" data-toggle="list" aria-controls="home">Prescription List</a>
       <a class="list-group-item list-group-item-action" href="#list-settings" id="list-adoc-list"  role="tab" data-toggle="list" aria-controls="home">Add Doctor</a>
+      <a class="list-group-item list-group-item-action" href="#list-prs" id="list-adprs-list"  role="tab" data-toggle="list" aria-controls="home">Add Paramedic</a>
       <a class="list-group-item list-group-item-action" href="#list-settings1" id="list-ddoc-list"  role="tab" data-toggle="list" aria-controls="home">Delete Doctor</a>
       <a class="list-group-item list-group-item-action" href="#list-mes" id="list-mes-list"  role="tab" data-toggle="list" aria-controls="home">Queries</a>
       
@@ -438,6 +453,7 @@ if(isset($_POST['docsub1']))
                     <th scope="col">Hospital referred</th>
                     <th scope="col">Referral date</th>
                     <th scope="col">Referred by</th>
+                    <th scope="col">Delivery status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -451,6 +467,13 @@ if(isset($_POST['docsub1']))
                         <td><?php echo $row["hs_name"] ?></td>
                         <td><?php echo $row["referal_date"] ?></td>
                         <td><?php echo $row["refered_by"] ?></td>
+                        <td>
+                          <?php if($row["isDelivered"]) {?>
+                            <p>Delivered</p>
+                          <?php } else {?>
+                            <p>Not delivered</p>
+                          <?php }?>
+                        </td>
                     </tr>
                   <?php }?>
                 </tbody>
@@ -563,6 +586,21 @@ if(isset($_POST['docsub1']))
                   <div class="col-md-8"><input type="text" class="form-control"  name="docFees" required></div><br><br>
                 </div>
           <input type="submit" name="docsub" value="Add Doctor" class="btn btn-primary">
+        </form>
+      </div>
+
+
+      <div class="tab-pane fade" id="list-prs" role="tabpanel" aria-labelledby="list-adprs-list">
+        <form class="form-group" method="post" action="admin-panel1.php">
+          <div class="row">
+                  <div class="col-md-4"><label>First Name:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="pr_fname" onkeydown="return alphaOnly(event);" required></div><br><br>
+                  <div class="col-md-4"><label>Last Name:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="pr_lname" onkeydown="return alphaOnly(event);" required></div><br><br>
+                  <div class="col-md-4"><label>Email:</label></div>
+                  <div class="col-md-8"><input type="email"  class="form-control" name="pr_email" required></div><br><br>
+          </div>
+          <input type="submit" name="prs_sub" value="Add Paramedic" class="btn btn-primary">
         </form>
       </div>
 
