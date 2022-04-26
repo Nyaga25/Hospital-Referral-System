@@ -23,4 +23,5 @@ function getReferals() {
    return $refs;
 
 }
+?>
 

@@ -19,20 +19,6 @@ if(isset($_POST['docsub']))
   }
 }
 
-if(isset($_POST['prs_sub']))
-{
-  $pr_fname=$_POST['pr_fname'];
-  $pr_lname=$_POST['pr_lname'];
-  $pr_email=$_POST['pr_email'];
-
-  $query="insert into paramedics(f_name,l_name,email)values('$pr_fname','$pr_lname','$pr_email')";
-  $result=mysqli_query($con,$query);
-  if($result)
-    {
-      echo "<script>alert('Doctor added successfully!');</script>";
-  }
-}
-
 
 if(isset($_POST['docsub1']))
 {
@@ -56,7 +42,7 @@ if(isset($_POST['docsub1']))
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="images/user2.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
@@ -67,7 +53,7 @@ if(isset($_POST['docsub1']))
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <a class="navbar-brand" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> REFERRAL SYSTEM</a>
+  <a class="navbar-brand" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Referral Hospital </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -118,11 +104,9 @@ if(isset($_POST['docsub1']))
 }
 
 .btn-primary{
-  background-color: #BFB372;
-  border-color: #BFB372;
+  background-color: #3c50c1;
+  border-color: #3c50c1;
 }
-
-.ref-tb th,td{white-space: nowrap;}
   </style>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -145,18 +129,28 @@ if(isset($_POST['docsub1']))
    <div class="container-fluid" style="margin-top:50px;">
     <h3 style = "margin-left: 40%; padding-bottom: 20px;font-family: 'IBM Plex Sans', sans-serif;"> WELCOME ADMINISTRATOR </h3>
     <div class="row">
-  <div class="col-md-4" style="max-width:25%;margin-top: 3%;">
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-dash-list" data-toggle="list" href="#list-dash" role="tab" aria-controls="home">Dashboard</a>
-      <a class="list-group-item list-group-item-action" href="#list-doc" id="list-doc-list"  role="tab"    aria-controls="home" data-toggle="list">Doctor List</a>
-      <a class="list-group-item list-group-item-action" href="#list-pat" id="list-pat-list"  role="tab" data-toggle="list" aria-controls="home">Patient List</a>
-      <a class="list-group-item list-group-item-action" href="#list-ref" id="list-ref-list"  role="tab" data-toggle="list" aria-controls="home">Referal List</a>
-      <a class="list-group-item list-group-item-action" href="#list-app" id="list-app-list"  role="tab" data-toggle="list" aria-controls="home">Appointment Details</a>
-      <a class="list-group-item list-group-item-action" href="#list-pres" id="list-pres-list"  role="tab" data-toggle="list" aria-controls="home">Prescription List</a>
-      <a class="list-group-item list-group-item-action" href="#list-settings" id="list-adoc-list"  role="tab" data-toggle="list" aria-controls="home">Add Doctor</a>
-      <a class="list-group-item list-group-item-action" href="#list-prs" id="list-adprs-list"  role="tab" data-toggle="list" aria-controls="home">Add Paramedic</a>
-      <a class="list-group-item list-group-item-action" href="#list-settings1" id="list-ddoc-list"  role="tab" data-toggle="list" aria-controls="home">Delete Doctor</a>
-      <a class="list-group-item list-group-item-action" href="#list-mes" id="list-mes-list"  role="tab" data-toggle="list" aria-controls="home">Queries</a>
+  <<div class="col-md-4" style="max-width:25%;margin-top: 3%;">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-dash-list" data-toggle="list"
+                        href="#list-dash" role="tab" aria-controls="home">Dashboard</a>
+                    <a class="list-group-item list-group-item-action" href="#list-doc" id="list-doc-list" role="tab"
+                        aria-controls="home" data-toggle="list">Doctor List</a>
+                    <a class="list-group-item list-group-item-action" href="#list-pat" id="list-pat-list" role="tab"
+                        data-toggle="list" aria-controls="home">Patient List</a>
+                    <a class="list-group-item list-group-item-action" href="#list-ref" id="list-ref-list" role="tab"
+                        data-toggle="list" aria-controls="home">Referal List</a>
+                    <a class="list-group-item list-group-item-action" href="#list-app" id="list-app-list" role="tab"
+                        data-toggle="list" aria-controls="home">Appointment Details</a>
+                    <a class="list-group-item list-group-item-action" href="#list-pres" id="list-pres-list" role="tab"
+                        data-toggle="list" aria-controls="home">Prescription List</a>
+                    <a class="list-group-item list-group-item-action" href="#list-settings" id="list-adoc-list"
+                        role="tab" data-toggle="list" aria-controls="home">Add Doctor</a>
+                    <a class="list-group-item list-group-item-action" href="#list-prs" id="list-adprs-list" role="tab"
+                        data-toggle="list" aria-controls="home">Add Paramedic</a>
+                    <a class="list-group-item list-group-item-action" href="#list-settings1" id="list-ddoc-list"
+                        role="tab" data-toggle="list" aria-controls="home">Delete Doctor</a>
+                    <a class="list-group-item list-group-item-action" href="#list-mes" id="list-mes-list" role="tab"
+                        data-toggle="list" aria-controls="home">Queries</a>
       
     </div><br>
   </div>
@@ -234,6 +228,8 @@ if(isset($_POST['docsub1']))
                     </div>
                   </div>
                 </div>
+
+                
 
 
                 <div class="col-sm-4" style="left: 18%;margin-top: 5%">
@@ -370,6 +366,7 @@ if(isset($_POST['docsub1']))
               </table>
         <br>
       </div>
+      
 
 
       <div class="tab-pane fade" id="list-pres" role="tabpanel" aria-labelledby="list-pres-list">
@@ -427,7 +424,7 @@ if(isset($_POST['docsub1']))
                         <td>$pres</td>
                       </tr>";
                     }
-                    $con -> close();
+
                   ?>
                 </tbody>
               </table>
@@ -435,7 +432,7 @@ if(isset($_POST['docsub1']))
       </div>
       </div>
       </div>
-
+      
       <div class="tab-pane fade" id="list-ref" role="tabpanel" aria-labelledby="list-ref-list">
 
        <div class="col-md-8">
@@ -457,31 +454,44 @@ if(isset($_POST['docsub1']))
                   </tr>
                 </thead>
                 <tbody>
-                  <?php require_once("./refl.php")?>
-                  <?php $rows = getReferals() ?>
+                    <?php require_once("./refl.php")?>
+                    <?php $rows = getReferals() ?>
+                    <?php foreach($rows as $row) {?>
                     <tr>
-                      <?php foreach($rows as $row) {?>
-                        <td><?php echo $row["patient_id"] ?></td>
-                        <td><?php echo $row["fname"] ?></td>
-                        <td><?php echo $row["lname"] ?></td>
-                        <td><?php echo $row["hs_name"] ?></td>
-                        <td><?php echo $row["referal_date"] ?></td>
-                        <td><?php echo $row["refered_by"] ?></td>
                         <td>
-                          <?php if($row["isDelivered"]) {?>
-                            <p>Delivered</p>
-                          <?php } else {?>
-                            <p>Not delivered</p>
-                          <?php }?>
+                            <?php echo $row["patient_id"] ?>
                         </td>
-                    </tr>
-                  <?php }?>
+                        <td>
+                            <?php echo $row["fname"] ?>
+                        </td>
+                        <td>
+                            <?php echo $row["lname"] ?>
+                        </td>
+                        <td>
+                            <?php echo $row["hs_name"] ?>
+                        </td>
+                        <td>
+                            <?php echo $row["referal_date"] ?>
+                        </td>
+                        <td>
+                            <?php echo $row["refered_by"] ?>
+                        </td>
+                        <td>
+                            <?php if($row["isDelivered"]) {?>
+                            <p>Delivered</p>
+                            <?php } else {?>
+                            <p>Not delivered</p>
+                            <?php }?>
+                        </td>
+                      </tr>
+                      <?php }?>
                 </tbody>
               </table>
         <br>
       </div>
       </div>
       </div>
+                   
 
 
 
@@ -557,6 +567,9 @@ if(isset($_POST['docsub1']))
         <br>
       </div>
 
+      
+      
+
 <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
 
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
@@ -588,21 +601,23 @@ if(isset($_POST['docsub1']))
           <input type="submit" name="docsub" value="Add Doctor" class="btn btn-primary">
         </form>
       </div>
-
-
-      <div class="tab-pane fade" id="list-prs" role="tabpanel" aria-labelledby="list-adprs-list">
-        <form class="form-group" method="post" action="admin-panel1.php">
-          <div class="row">
-                  <div class="col-md-4"><label>First Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="pr_fname" onkeydown="return alphaOnly(event);" required></div><br><br>
-                  <div class="col-md-4"><label>Last Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="pr_lname" onkeydown="return alphaOnly(event);" required></div><br><br>
-                  <div class="col-md-4"><label>Email:</label></div>
-                  <div class="col-md-8"><input type="email"  class="form-control" name="pr_email" required></div><br><br>
-          </div>
-          <input type="submit" name="prs_sub" value="Add Paramedic" class="btn btn-primary">
-        </form>
-      </div>
+      
+                    <div class="tab-pane fade" id="list-prs" role="tabpanel" aria-labelledby="list-adprs-list">
+                        <form class="form-group" method="post" action="admin-panel1.php">
+                            <div class="row">
+                                <div class="col-md-4"><label>First Name:</label></div>
+                                <div class="col-md-8"><input type="text" class="form-control" name="pr_fname"
+                                        onkeydown="return alphaOnly(event);" required></div><br><br>
+                                <div class="col-md-4"><label>Last Name:</label></div>
+                                <div class="col-md-8"><input type="text" class="form-control" name="pr_lname"
+                                        onkeydown="return alphaOnly(event);" required></div><br><br>
+                                <div class="col-md-4"><label>Email:</label></div>
+                                <div class="col-md-8"><input type="email" class="form-control" name="pr_email" required>
+                                </div><br><br>
+                            </div>
+                            <input type="submit" name="prs_sub" value="Add Paramedic" class="btn btn-primary">
+                        </form>
+                    </div>
 
       <div class="tab-pane fade" id="list-settings1" role="tabpanel" aria-labelledby="list-settings1-list">
         <form class="form-group" method="post" action="admin-panel1.php">
@@ -665,12 +680,14 @@ if(isset($_POST['docsub1']))
         <br>
       </div>
 
-
-
+      
+    
+    </div>
+        
     </div>
   </div>
 </div>
-   </div>
+   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
